@@ -1,32 +1,14 @@
-import numpy as num
+import numpy as np
 
-lenght = 99
-start = 1
-final_median = 24
-final_middle = 23
+length = 99
+final_median = 50
+final_mean = 45
 final_range = 100
+start_value = 3
 
-def generate(start, lenght, current_sequence, final_median, final_middle, final_range):
-    if len(current_sequence) == lenght:
-
-        median, middle, rangeTemp = compute_statistics(current_sequence)
-
-        if (num.isclose(median, final_median) and num.isclose(middle, final_middle) and num.isclose(rangeTemp, final_range)):
-            return current_sequence
-        return None
-
-    
-    for next_value in range(start, start + 100):
-        result = generate(next_value + 1, lenght, current_sequence + [next_value], final_median, final_middle, final_range)
-        if result:
-            return result
-    return None
-
-def compute_statistics(test):
-    median = num.median(test)
-    middle = num.mean(test)
-    rangeTemp = max(test) - min(test)
-    return median, middle, rangeTemp
-print("skibi")
-solution = generate(start, lenght, [], final_median, final_middle, final_range)
-print(solution)
+#O(∞)
+while True :
+    num_array = np.random.randint(start_value, start_value + final_range, 99)
+    print (num_array)
+    if (num_array.mean == final_mean and num_array.min == start_value and num_array.max == start_value+final_range and np.median(num_array) == final_median):
+        break
