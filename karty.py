@@ -11,6 +11,7 @@ while True:
     
     num_array[length-1] = start_value + final_range
     
+    #mean
     current_mean = np.mean(num_array)
     adjustment = final_mean - current_mean
     num_array = np.round(num_array + adjustment).astype(int)
