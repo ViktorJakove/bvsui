@@ -2,8 +2,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from sklearn.ensemble import RandomForestClassifier
-path_to_data = './weatherAUS.csv'
-data = pd.read_csv(path_to_data)
+path = './weatherAUS.csv'
+data = pd.read_csv(path)
 
 data['Day'] = pd.to_datetime(data['Date'], errors='coerce').dt.day
 data['Month'] = pd.to_datetime(data['Date'], errors='coerce').dt.month
