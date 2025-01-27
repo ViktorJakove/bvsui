@@ -2,8 +2,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from sklearn.ensemble import RandomForestClassifier
-path_to_data = './hotel_booking.csv'
-data = pd.read_csv(path_to_data)
+path= './hotel_booking.csv'
+data = pd.read_csv(path)
 
 input = ['lead_time', 'arrival_date_year', 'arrival_date_month', 'arrival_date_week_number', 
          'arrival_date_day_of_month', 'stays_in_weekend_nights', 'stays_in_week_nights', 'adults', 
